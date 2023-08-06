@@ -4,6 +4,7 @@
 
 #include "Xenon/Application.hpp"
 #include "Xenon/Core.hpp"
+#include "Xenon/Logger.hpp"
 
 
 // -------- Entry Point --------

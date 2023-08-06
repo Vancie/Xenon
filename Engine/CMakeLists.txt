@@ -1,6 +1,17 @@
 
 
+#SPDLOG
+
+add_subdirectory(thirdParty/spdlog)
+find_package(spdlog)
 
 
-add_library(XenonEngine SHARED "src/Xenon/Application.cpp")
+#XENON ENGINE SOURCES
+set(LIB_SOURCES 
+  src/Xenon/Application.cpp
+  src/Xenon/Logger.cpp
+  )
+
+add_library(XenonEngine SHARED ${LIB_SOURCES})
 target_include_directories(XenonEngine PUBLIC ${CMAKE_CURRENT_LIST_DIR}/src)
+target_link_libraries(XenonEngine spdlog)
