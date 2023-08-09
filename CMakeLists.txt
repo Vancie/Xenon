@@ -4,6 +4,5 @@ project(XenonEngine)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON CACHE INTERNAL "") # works
 
-
 add_subdirectory(Engine)
 add_subdirectory(Sandbox)

@@ -2,7 +2,7 @@
 
 #include "Core.hpp"
 #include "spdlog/spdlog.h"
-#include <memory>
+#include "spdlog/fmt/ostr.h"
 
 namespace Xenon {
   class XENON_API Logger {

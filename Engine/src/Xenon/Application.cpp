@@ -1,6 +1,9 @@
 
 #include "Application.hpp"
-#include <iostream>
+#include "Events/ApplicationEvent.hpp"
+#include "Logger.hpp"
+
+
 namespace Xenon {
   Application::Application() {
 
@@ -11,6 +14,7 @@ namespace Xenon {
   }
 
   void Application::Run() {
-    while (true);
+    WindowResizedEvent e(1280, 780);
+    XN_TRACE(e);
   }
 }
