@@ -1,23 +1,20 @@
 
 #include <Xenon.hpp>
 
+class ExampleLayer : public Xenon::Layer {
+public:
+  ExampleLayer() : Layer("Example") {}
 
-class Sandbox : public Xenon::Application {
-  public:
-    Sandbox() {
+  void OnUpdate() override { XN_INFO("ExampleLayer::Update"); }
 
-    }
-
-    ~Sandbox() {
-
-    }
+  void OnEvent(Xenon::Event &event) override { XN_TRACE("{0}", event); }
 };
 
+class Sandbox : public Xenon::Application {
+public:
+  Sandbox() { PushLayer(new ExampleLayer); }
 
-Xenon::Application* Xenon::CreateApplication() {
-  return new Sandbox();
-}
+  ~Sandbox() {}
+};
 
-
-
-
+Xenon::Application *Xenon::CreateApplication() { return new Sandbox(); }

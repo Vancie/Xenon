@@ -16,6 +16,8 @@ set(LIB_SOURCES
   src/Xenon/Application.cpp
   src/Xenon/Logger.cpp
   src/Platform/MacOS/MacWindow.cpp
+  src/Xenon/Layer.cpp
+  src/Xenon/LayerStack.cpp
 )
 
 #Third party dependencies
