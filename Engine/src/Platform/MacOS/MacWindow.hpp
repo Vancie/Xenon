@@ -1,40 +1,43 @@
 #pragma once
 
-#include <GLFW/glfw3.h>
+#include "Glad/glad.h"
 #include "Xenon/Window.hpp"
-
+#include <GLFW/glfw3.h>
 
 namespace Xenon {
-  class MacOSWindow : public Window {
-    public:
-      MacOSWindow(const WindowProps& props);
-      virtual ~MacOSWindow();
+class MacOSWindow : public Window {
+public:
+  MacOSWindow(const WindowProps &props);
+  virtual ~MacOSWindow();
 
-      void OnUpdate() override;
+  void OnUpdate() override;
 
-      inline unsigned int GetWidth() const override { return m_Data.Width; }
-      inline unsigned int GetHeight() const override { return m_Data.Height; }
+  inline unsigned int GetWidth() const override { return m_Data.Width; }
+  inline unsigned int GetHeight() const override { return m_Data.Height; }
 
-      //Attributes
-      inline void SetEventCallback(const EventCallbackFn& callback) override { m_Data.EventCallback = callback; }
-      void SetVSync(bool enabled) override;
-      bool IsVSync() const override;
-    private:
-      virtual void Init(const WindowProps& props);
-      virtual void Shutdown();
-    private:
-      GLFWwindow* m_Window;
+  // Attributes
+  inline void SetEventCallback(const EventCallbackFn &callback) override {
+    m_Data.EventCallback = callback;
+  }
+  void SetVSync(bool enabled) override;
+  bool IsVSync() const override;
 
-      struct WindowData {
-        std::string Title;
-        unsigned int Width;
-        unsigned int Height;
-        bool VSync;
+private:
+  virtual void Init(const WindowProps &props);
+  virtual void Shutdown();
 
-        EventCallbackFn EventCallback;
-      };
+private:
+  GLFWwindow *m_Window;
 
-      WindowData m_Data;
+  struct WindowData {
+    std::string Title;
+    unsigned int Width;
+    unsigned int Height;
+    bool VSync;
 
+    EventCallbackFn EventCallback;
   };
-}
+
+  WindowData m_Data;
+};
+} // namespace Xenon

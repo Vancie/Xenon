@@ -12,7 +12,10 @@ public:
 
 class Sandbox : public Xenon::Application {
 public:
-  Sandbox() { PushLayer(new ExampleLayer); }
+  Sandbox() {
+    PushLayer(new ExampleLayer);
+    PushOverlay(new Xenon::ImguiLayer());
+  }
 
   ~Sandbox() {}
 };

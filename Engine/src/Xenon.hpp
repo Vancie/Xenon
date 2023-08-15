@@ -6,6 +6,7 @@
 #include "Xenon/Core.hpp"
 #include "Xenon/Layer.hpp"
 #include "Xenon/Logger.hpp"
+#include "Xenon/imgui/ImguiLayer.hpp"
 
 // -------- Entry Point --------
 //
